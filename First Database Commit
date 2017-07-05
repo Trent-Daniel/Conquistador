@@ -1,0 +1,42 @@
+create table `castles`(
+    `castle_id` int auto_increment primary key not null,
+	`castle_name` varchar(30) not null unique,
+    `castle_offense` tinyint not null,
+    `castle_defense` tinyint not null,
+    `castle_storage` smallint not null,
+    `unit_id` int references `military_unit`(`unit_id`),
+    `castle_capital` boolean not null,
+    `castle_pop` int not null,
+    `country_id` int references `countries`(`country_id`));
+    
+create table `fields`(
+    `field_id` int primary key auto_increment not null,
+    `field_type` varchar(15) references `resources`(`resource_type`),
+    `field_terrain` tinyint not null,
+    `actual_production` float not null,
+    `potential_production` float not null,
+    `castle_id` int references `castles`(`castle_id`));
+
+create table `resources`(
+    `resource_id` int auto_increment not null primary key,
+    `resource_tier` tinyint not null,
+    `resource_cost` tinyint not null);
+
+create table `military_unit`(
+    `unit_id` int primary key not null auto_increment,
+    `user_id` int not null references `users`(`user_id`),
+    `unit_name` varchar(30) not null,
+    `unit_offense` tinyint not null,
+    `unit_defense` tinyint not null,
+	`unit_storage` tinyint not null,
+	`unit_cost` float not null);
+
+create table `countries`(
+    `country_id` int primary key auto_increment not null,
+    `health_care` tinyint not null,
+    `education` tinyint not null);
+
+create table `users`(
+    `user_id` int not null primary key,
+    `user_name` varchar(30) not null,
+    `user_password` varchar(30) not null);
