@@ -1,0 +1,103 @@
+span+span{
+	margin:0 10px;
+}
+
+.heading{
+	text-align: center;
+	border-bottom-style:solid;
+	border-bottom-color:#331a00;
+	border-bottom-width:1px;
+}
+
+.surround{
+	background-color:#f2e6d9;
+	color: #331a00;
+	border-color:#331a00;
+	border-style:solid;
+	border-width: 5px;
+}
+
+#middle_left{
+	width:300px;
+	float:left;
+	text-align:center;
+}
+#actions{
+	position:relative;
+	top:3px;
+}
+
+
+.continental{
+	width:918px;
+}
+.regional{
+	width:150%;
+}
+.local{
+	width:200%;
+}
+
+#section{
+	position:relative;
+	top:3px;
+}
+
+#window{
+	float:left;
+	position:relative;
+	left:1px;
+	overflow:hidden;
+	max-width:918px;
+	max-height:465px;
+}
+
+.menu{
+	padding:13px 20px;
+	width:280px;
+	cursor:pointer;
+	color: #331a00;
+	border-color:#331a00;
+	background-color:white;
+
+}
+
+#p_stats2{
+	padding:3px 0px;
+}
+
+.stats_update{
+	border-style:solid;
+	border-color:#331a00;
+	background-color:white;
+	border-width:1px;
+	text-align:center;
+	padding: 0px 3px;
+}
+
+.dropdown{
+	display:inline-block;
+	position:relative;
+}
+
+.dropdown-content{
+	display:none;
+	position:absolute;
+	z-index:1;
+}
+
+
+
+.show{
+	display:block;
+}
+
+.dropdown-button{
+	width:90px;
+	display:inline-block;
+	padding: 13px 0px;
+	cursor:pointer;
+	color: #331a00;
+	border-color:#331a00;
+	background-color:white;
+}
