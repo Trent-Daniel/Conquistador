@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title> Home </title>
+	<style>
+		#title {
+			font-size: 100px;
+			font-family: 'Times New Roman';
+			text-align: center;
+			height: 100px;
+			line-height: 100px;
+			background-color: darkred;
+			margin-top: -90px;
+		    text-shadow:
+		    -1px -1px 0 white,
+		    1px -1px 0 white,
+		    -1px 1px 0 white,
+		    1px 1px	 0 white; 
+		}	
+
+		#button_bar{
+			 text-align: center;
+		}
+
+		.tab_button {
+			font-size: 30px;
+			font-weight: bold;
+			font-family: 'Times New Roman';
+			width: 33%;
+			background-color: #e3e3e3;
+			border:none;
+			text-shadow: 
+			-1px -1px 0 white,
+		    1px -1px 0 white,
+		    -1px 1px 0 white,
+		    1px 1px	 0 white; 
+		}
+
+		.tab_button:hover {
+			background-color: grey;
+		}
+
+		.tab_button:active {
+			color: black;
+		}
+
+		.tab_button.active {
+			background-color: darkred;
+		}
+
+		.tab_content {
+			display:none;
+			transition: opacity 0.3s ease-in-out;
+		    -moz-transition: opacity 0.3s ease-in-out;
+		    -webkit-transition: opacity 0.3s ease-in-out;
+		}
+	
+		/* PLAY TAB */
+
+
+		#guest_message {
+			padding-bottom: 17px;
+			padding-left: 3px;
+		}
+
+		.login_title{
+			color: white;
+			font-family: 'Courier';
+			background-color: black;
+			padding-top: 8px;
+			padding-bottom: 8px;
+			padding-left: 10px;
+			margin-left: 3px;		
+		}
+
+		.login_box,#guest_box{
+			height: 149px;
+			width: 230px;
+			background-color: #e3e3e3;
+			border-left: 6px solid darkred;
+		}
+	
+		.login_div {
+		    opacity: 0.1;
+		    transition: opacity 0.3s ease-in-out;
+		    -moz-transition: opacity 0.3s ease-in-out;
+		    -webkit-transition: opacity 0.3s ease-in-out;
+		}
+		.login_div:hover{
+		    opacity: 1.0;
+		    transition: opacity 0.3s ease-in-out;
+		    -moz-transition: opacity 0.3s ease-in-out;
+		    -webkit-transition: opacity 0.3s ease-in-out;
+    	}
+
+    	.submit_button{
+    		font-size: 20px;
+    		font-family: 'Courier';
+			width: 227px;
+    		border:none;
+			background-color: darkred;
+			margin-left: 3px;
+    	}
+		
+    	/* MANUAL TAB */
+
+    	#table_contents {
+    		float: left;
+    		background-color: #e3e3e3;
+    	}
+
+    	#table_contents_message {
+
+    	}
+
+	</style>
+</head>
+
+<body>
+
+	<div id="title">
+		<p>CONQUISTADOR</p>
+	</div>
+
+	<hr><hr>
+
+	<div id="button_bar">
+		<button class='tab_button' onclick="openTab(event,'Play')">Play</button>
+		<button class='tab_button' onclick="openTab(event,'Manual')">Manual</button>
+		<button class='tab_button' onclick="openTab(event,'Tutorial')">Tutorial</button>
+	</div>
+
+	<br>
+
+	<div id="Play" class="tab_content">
+		<div id="guest_box">
+
+			<p class='login_title'>GUEST</p>
+			<div class="login_div">
+				<p id='guest_message'> As a guest, your stats will not be saved when you finish.</p>
+				<button class="submit_button"> Play </button> 												
+				<!-- Add link to play page */-->
+			</div>
+
+		</div>
+		<div class="login_box">
+			<p class="login_title">LOGIN</p>
+			<div class="login_div">
+				
+				<form class="login_form">
+					<h3>
+						<input type="text" name="username" size="30" placeholder="Username" value="" />
+						<br />
+						<input type="password" name="password" size="30" placeholder="Password" value="" />
+					</h3>
+				</form>
+				<input class='submit_button' type="submit" name="submit" value="Login & Play"/>
+			</div>
+		</div>
+
+		<div class="login_box">
+			<p class="login_title">REGISTER</p>
+			<div class="login_div">
+				<form class="login_form" action="http://localhost/register.php" method="post">
+					<h3>
+						<input type="text" name="username" size="30" placeholder="Username" value="" />
+						<br />
+						<input type="password" name="password" size="30" placeholder="Password" value="" />
+					</h3>
+				</form>
+				<input class='submit_button' type="submit" name="submit" value="Register & Play" />
+			</div>
+		</div>
+	</div>
+
+	<div id="Manual" class="tab_content">
+		<div id='table_contents'>
+			<p id='table_contents_message'>Table of Contents </p>
+			<p> 
+					  1. Map 
+				<br/> 	a. World
+				<br/>	b. Castles
+				<br/> 	c. Fields
+				<br/>	d. Provinces
+				<br/> 2. Resources
+				<br/>	a. 1st Tier
+				<br/>	b. 2nd Tier
+				<br/>	c. 3rd Tier 
+				<br/> 3. Military 
+				<br/>	a. Unit Types
+				<br/>	b. Tiers
+				<br/> 4. People 
+				<br/> 5. ...
+
+			</p>
+		</div>
+	</div>
+
+	<div id="Tutorial" class="tab_content">
+		<p>		  Step 1: Don't lose
+			<br/> Step 2: Don't not win
+			<br/> Step 3: Done
+		</p>
+	</div>
+
+	<script>
+		function openTab(evt, buttonName) {
+	    	var i, tab_content, tab_button;
+	    	tab_content=document.getElementsByClassName("tab_content");
+	    	for (i=0;i<tab_content.length;i++){
+	    		tab_content[i].style.display="none";
+	    	}
+
+	    	tab_button=document.getElementsByClassName("tab_button");
+	    	for (i = 0;i<tab_button.length; i ++) {
+	    		tab_button[i].className=tab_button[i].className.replace("active","");
+	    	}
+
+	    	document.getElementById(buttonName).style.display = "block";
+   			evt.currentTarget.className += " active";
+	    	
+		}
+	</script>
+</body>
+
+</html>
