@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" href="HUD.css"/>
+	<title> Conquistador </title>
+	<script src="HUD.js"></script>
+	</head>
+	<body>
+		<!--div for Views-->
+		<!--div for top bar-->
+		
+		<!--div for personal stats-->
+		<div class="surround" id="p_stats">
+			<div class="heading">
+				<h3>Personal Stats </h3>
+			</div>
+			<div id="p_stats2">
+				<span class="time">
+					Time:
+					<span class="stats_update" id="time">
+					<!--INSERT JAVASCRIPT-->
+					</span>
+				</span>
+				<span class="mil_pow">
+					Military Power:
+					<span class="stats_update" id="mil_pow">
+					<!--INSERT JAVASCRIPT-->
+					</span>
+				</span>
+				<span class="influence">
+					Influence:
+					<span class="stats_update" id="influence">
+					<!--INSERT JAVASCRIPT-->
+					</span>
+				</span>
+				<span class="GDP">
+					GDP:
+					<span class="stats_update" id="GDP">
+					<!--INSERT JAVASCRIPT-->
+					</span>
+				</span>
+			</div>
+		</div>
+		<!--div for most probable attacks????-->
+		<div id="section">
+		<!--div for actions-->
+			<div id="middle_left">
+				<div class="surround" id="views">
+					<div class="heading">
+						<h3>Views</h3>
+					</div>
+
+					<button onclick="continental()" class="menu" type="button" id="continental">
+						Continental
+					</button>
+
+					<button onclick="regional()" class="menu" type="button" id="regional">
+						Regional
+					</button>
+
+					<button onclick="local()" class="menu" type="button" id="local">
+						Local
+					</button>
+				</div>
+
+				<div class="surround" id="actions">
+					<div class="heading">
+						<h3>Actions</h3>
+					</div>
+
+					<div class="dropdown">
+						<button onclick="build()" class="menu" type="button" id="build">
+							Build
+						</button>
+						<div id="build_dropdown" class="dropdown-content">
+							<button type="button" id="new" class="dropdown-button">
+								New
+							</button>
+							<button type="button" id="upgrade" class="dropdown-button">
+								Upgrade
+							</button>
+							<button type="button" id="repair" class="dropdown-button">
+								Repair
+							</button>
+						</div>
+					</div>
+
+					<button class="menu" type="button" id="war">
+						War
+					</button>
+
+					<button class="menu" type="button" id="trade">
+						Trade
+					</button>
+
+					<button class="menu" type="button" id="admin">
+						Admin
+					</button>
+				</div>
+			</div>
+			<!--div for window-->
+			<div class="surround" id="window">
+					<img  class="continental" id="map" src="file:///Users/trentdaniel/Desktop/Maps/596c1e8a-63f5e968.png"/>
+			</div>
+		</div>
+		<input type="text" id="test" size="30"/>
+
+
+		<!--div for object stats-->
+	</body>
+
+</html>
